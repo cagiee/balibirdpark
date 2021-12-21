@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "calculator";
+  src: url("../font/calculator.ttf");
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  // font-family: "syncopate";
+  // font-family: "barlow condensed";
+  font-family: "outfit";
+  // background: url(../img/bg.jpg) center;
+  // background-size: cover;
+  background-color: #fff;
+  // overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+input,select,button{
+  font-family: "Outfit";
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

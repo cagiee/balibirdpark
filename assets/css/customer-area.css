@@ -1,0 +1,335 @@
+.container {
+  padding: 24px 100px;
+}
+
+.container .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .heading img {
+  margin-bottom: 12px;
+  height: 50px;
+}
+
+.container .heading h4 {
+  margin-left: 9px;
+  font-size: 1.2em;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: green;
+}
+
+.container .box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 320px auto;
+      grid-template-columns: 320px auto;
+  min-height: calc(100vh - 120px);
+}
+
+.container .box > .left {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .box > .left > div {
+  padding: 24px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .box > .left .profile {
+  width: 100px;
+  height: 100px;
+  margin: 32px 0px 12px 0px;
+  position: relative;
+}
+
+.container .box > .left .background {
+  width: 100%;
+  height: 110px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.container .box > .left .input-group-float {
+  position: relative;
+  margin: 8px 0px;
+  width: 100%;
+}
+
+.container .box > .left .input-group-float input,
+.container .box > .left .input-group-float select {
+  width: 100%;
+  padding: 12px 18px 12px 40px;
+  border-radius: 7px;
+  border: 0;
+  background-color: #eee;
+}
+
+.container .box > .left .input-group-float input::-webkit-input-placeholder,
+.container .box > .left .input-group-float select::-webkit-input-placeholder {
+  font-family: "Outfit";
+}
+
+.container .box > .left .input-group-float input:-ms-input-placeholder,
+.container .box > .left .input-group-float select:-ms-input-placeholder {
+  font-family: "Outfit";
+}
+
+.container .box > .left .input-group-float input::-ms-input-placeholder,
+.container .box > .left .input-group-float select::-ms-input-placeholder {
+  font-family: "Outfit";
+}
+
+.container .box > .left .input-group-float input::placeholder,
+.container .box > .left .input-group-float select::placeholder {
+  font-family: "Outfit";
+}
+
+.container .box > .left .input-group-float .fa {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: green;
+}
+
+.container .box > .left #change-password-button {
+  width: 100%;
+  height: 36px;
+  position: relative;
+  margin-top: 18px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc(50% - 6px))[2];
+      grid-template-columns: repeat(2, calc(50% - 6px));
+  grid-gap: 12px;
+}
+
+.container .box > .left #change-password-button button {
+  width: 100%;
+  height: 36px;
+  border: 0;
+  font-family: "Outfit";
+  border-radius: 6px;
+  font-weight: 600;
+  background-color: #444;
+  color: #fff;
+}
+
+.container .box > .left #change-password-button #btn-cl {
+  background-color: #da2f2f;
+}
+
+.container .box > .left #change-password-button #btn-ch {
+  background-color: green;
+}
+
+.container .box > .left #profile-button {
+  width: 100%;
+  height: 36px;
+  position: relative;
+  margin-top: 18px;
+}
+
+.container .box > .left #profile-button #set-1 {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc(50% - 6px))[2];
+      grid-template-columns: repeat(2, calc(50% - 6px));
+  grid-gap: 12px;
+}
+
+.container .box > .left #profile-button #set-1 button {
+  width: 100%;
+  height: 36px;
+  border: 0;
+  font-family: "Outfit";
+  border-radius: 6px;
+  font-weight: 600;
+  background-color: #444;
+  color: #fff;
+}
+
+.container .box > .left #profile-button #set-1 #btn-cp {
+  background-color: orange;
+}
+
+.container .box > .left #profile-button #set-1 #btn-so {
+  background-color: #da2f2f;
+}
+
+.container .box > .left #pp-box {
+  width: 100%;
+}
+
+.container .box > .left #pp-box > div {
+  width: 100%;
+  height: 218px;
+}
+
+.container .box > .right {
+  padding-left: 24px;
+}
+
+.container .box > .right > .title {
+  font-size: 1.5em;
+}
+
+.booking-data {
+  position: relative;
+  margin-top: 24px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc(50% - 6px))[2];
+      grid-template-columns: repeat(2, calc(50% - 6px));
+  grid-gap: 12px;
+}
+
+.booking-data .data-items {
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  padding: 18px;
+}
+
+.booking-data .data-items .data-head .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.booking-data .data-items .data-head .left > * {
+  margin-right: 12px;
+}
+
+.booking-data .data-items .data-head .left .data-icon {
+  padding: 9px;
+  background-color: green;
+  color: white;
+  border-radius: 7px;
+  font-size: .75em;
+}
+
+.booking-data .data-items .data-head .left .data-package {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.booking-data .data-items .data-head .left .data-status {
+  font-size: .7em;
+  padding: 4px 12px;
+  background-color: #444;
+  color: #fff;
+  border-radius: 99px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.booking-data .data-items .data-head .left .data-status.paid {
+  background-color: #d8fad8;
+  color: green;
+}
+
+.booking-data .data-items .data-head .right .data-price {
+  margin-top: 12px;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.booking-data .data-items .data-head .right .data-paid-date {
+  color: #999;
+  margin-top: 12px;
+  font-size: .8em;
+  font-weight: 400;
+}
+
+.booking-data .data-items .data-body .data-id {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #444;
+  margin: 8px 0px 12px 0px;
+}
+
+.booking-data .data-items .data-body .data-pax, .booking-data .data-items .data-body .data-date, .booking-data .data-items .data-body .data-loc {
+  font-size: .8em;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.booking-data .data-items .data-body .data-pax .fa, .booking-data .data-items .data-body .data-date .fa, .booking-data .data-items .data-body .data-loc .fa {
+  margin-right: 2px;
+  color: #539953;
+  width: 12px;
+}
+
+.booking-data .data-items-empty {
+  width: 100%;
+  min-height: 216px;
+  background-color: #fff;
+  border: 3px dashed rgba(0, 128, 0, 0.25);
+  border-radius: 7px;
+  padding: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.booking-data .data-items-empty button {
+  cursor: pointer;
+  background-color: #008000;
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 7px;
+  border: 0;
+  font-family: "Outfit";
+  font-weight: 600;
+  font-size: .8em;
+}
+/*# sourceMappingURL=customer-area.css.map */

@@ -1,0 +1,277 @@
+.container {
+  padding: 24px 100px;
+
+  .heading {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-bottom: 12px;
+      height: 50px;
+    }
+
+    h4 {
+      margin-left: 9px;
+      font-size: 1.2em;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: green;
+    }
+  }
+
+  .box {
+    display: grid;
+    grid-template-columns: 320px auto;
+    min-height: calc(100vh - 120px);
+
+    & > .left {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      &>div {
+        padding: 24px;
+        height: max-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px 0px 10px rgba($color: #000000, $alpha: .1);
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .profile {
+        width: 100px;
+        height: 100px;
+        margin: 32px 0px 12px 0px;
+        position: relative;
+      }
+
+      .background {
+        width: 100%;
+        height: 110px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .input-group-float {
+        position: relative;
+        margin: 8px 0px;
+        width: 100%;
+
+        input,
+        select {
+          width: 100%;
+          padding: 12px 18px 12px 40px;
+          border-radius: 7px;
+          border: 0;
+          background-color: #eee;
+
+          &::placeholder {
+            font-family: "Outfit";
+          }
+        }
+
+        .fa {
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          transform: translate(-50%, -50%);
+          color: green;
+        }
+      }
+
+      #change-password-button {
+        width: 100%;
+        height: 36px;
+        position: relative;
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - 6px));
+        grid-gap: 12px;
+
+        button {
+          width: 100%;
+          height: 36px;
+          border: 0;
+          font-family: "Outfit";
+          border-radius: 6px;
+          font-weight: 600;
+          background-color: #444;
+          color: #fff;
+        }
+
+        #btn-cl {
+          background-color: rgb(218, 47, 47);
+        }
+
+        #btn-ch {
+          background-color: green;
+        }
+      }
+
+      #profile-button {
+        width: 100%;
+        height: 36px;
+        position: relative;
+        margin-top: 18px;
+
+        #set-1 {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, calc(50% - 6px));
+          grid-gap: 12px;
+
+          button {
+            width: 100%;
+            height: 36px;
+            border: 0;
+            font-family: "Outfit";
+            border-radius: 6px;
+            font-weight: 600;
+            background-color: #444;
+            color: #fff;
+          }
+
+          #btn-cp {
+            background-color: orange;
+          }
+
+          #btn-so {
+            background-color: rgb(218, 47, 47);
+          }
+        }
+      }
+
+      #pp-box {
+        width: 100%;
+        // height: 218px;
+
+        &>div {
+          width: 100%;
+          height: 218px;
+        }
+      }
+    }
+
+    & > .right{
+      padding-left: 24px;
+      & > .title{
+        font-size: 1.5em;
+        // font-weight: 600;
+      }
+    }
+  }
+}
+.booking-data{
+  position: relative;
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2,calc(50% - 6px));
+  grid-gap: 12px;
+  .data-items{
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba($color: #000000, $alpha: .25);
+    border-radius: 7px;
+    padding: 18px;
+    // font-family: 'calculator';
+    .data-head{
+      .left{
+        display: flex;
+        align-items: center;
+        & > *{
+          margin-right: 12px;
+        }
+        .data-icon{
+          padding: 9px;
+          background-color: green;
+          color: white;
+          border-radius: 7px;
+          font-size: .75em;
+        }
+        .data-package{
+          font-weight: 600;
+          text-transform: capitalize;
+        }
+        .data-status{
+          font-size: .7em;
+          padding: 4px 12px;
+          background-color: #444;
+          color: #fff;
+          border-radius: 99px;
+          font-weight: 600;
+          text-transform: capitalize;
+          &.paid{
+            background-color: rgb(216, 250, 216);
+            color: green;
+          }
+        }
+      }
+      .right{
+        // display: flex;
+        // justify-content: end;
+        // align-items: center;
+        .data-price{
+          // color: #;
+          margin-top: 12px;
+          font-size: 1.5em;
+          font-weight: 600;
+        }
+        .data-paid-date{
+          color: #999;
+          margin-top: 12px;
+          font-size: .8em;
+          font-weight: 400;
+        }
+      }
+    }
+    .data-body{
+      .data-id{
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #444;
+        // font-family: 'calculator';
+        margin: 8px 0px 12px 0px;
+      }
+      .data-pax,.data-date,.data-loc{
+        font-size: .8em;
+        color: #444;
+        margin-bottom: 8px;
+        .fa{
+          margin-right: 2px;
+          color: rgb(83, 153, 83);
+          width: 12px;
+        }
+      }
+    }
+  }
+  .data-items-empty{
+    width: 100%;
+    min-height: 216px;
+    background-color: #fff;
+    // box-shadow: 0px 0px 10px rgba($color: #000000, $alpha: .25);
+    border: 3px dashed rgba($color: #008000, $alpha: .25);
+    border-radius: 7px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button{
+      cursor: pointer;
+      background-color: #008000;
+      color: #fff;
+      padding: 9px 18px;
+      border-radius: 7px;
+      border: 0;
+      font-family: "Outfit";
+      font-weight: 600;
+      font-size: .8em;
+    }
+  }
+}
