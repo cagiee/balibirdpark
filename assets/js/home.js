@@ -56,10 +56,16 @@ $(window).on('scroll', function () {
     }
   }
   $(".btn-activity").find(".fa").css("transform", `rotate(0deg)`);
-  if ($(window).scrollTop() < 400)
+  if ($(window).scrollTop() < 400){
     $("#topnav").addClass("scroll-top");
-  else
+    $("#topnav-wrapper").css('background-color','transparent');
+    $("#topnav-wrapper").css('box-shadow','none');
+  }
+  else{
     $("#topnav").removeClass("scroll-top");
+    $("#topnav-wrapper").css('background-color','#fff');
+    $("#topnav-wrapper").css('box-shadow','0px 0px 10px rgba(0,0,0,.1)');
+  }
 })
 
 function modalLogin() {
@@ -217,3 +223,16 @@ function ValidateEmail(value) {
     return false;
   }
 }
+
+$(function () {
+  let width = ($(window).width());
+  let url = window.location.origin;
+  let el = $(".person")[0];
+  if(width < 1024){
+    $(el).attr("src",`${url}/assets/img/banner-bird.png`);
+    $(el).css("width","400px");
+    $(el).css("margin-top","140px");
+  }else{
+    $(el).attr("src",`${url}/assets/img/banner-bird-text.png`);
+  }
+})

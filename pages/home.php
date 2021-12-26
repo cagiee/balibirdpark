@@ -1,3 +1,4 @@
+<div id="topnav-wrapper">
   <div id="topnav" class="scroll-top">
     <div id="box">
       <div class="left">
@@ -34,15 +35,24 @@
             <?php
           }
         ?>
+        
+        <div class="topnav-items responsive">
+          <a><i class="fa fa-bars"></i></a>
+        </div>
       </div>
     </div>
   </div>
-  <section id="banner">
-    <div class="container">
-      <img src="<?= "{$h->img_url}banner-bg.jpg "?>" alt="" class="hill">
-      <img src="<?= "{$h->img_url}banner-bird-text.png "?>" alt="" class="person">
-    </div>
-  </section>
+</div>
+<!-- <section id="banner">
+  <div class="container">
+    <img src="<?= "{$h->img_url}banner-bg.jpg "?>" alt="" class="hill">
+    <img src="<?= "{$h->img_url}banner-bird-text.png "?>" alt="" class="person">
+  </div>
+</section> -->
+<div id="banner">
+  <img class="person" src="<?= $h->img_url ?>banner-bird-text.png" alt="">
+</div>
+<div class="body">
   <section id="content">
     <div class="container">
       <video width="100%" autoplay muted loop controls>
@@ -54,50 +64,18 @@
         <div class="activity-list">
           <div class="activity-items" style="background: url(<?= "{$h->img_url}act01.jpg" ?>);background-size: cover;">
             <h1 class="activity-heading">Bali Rainforest</h1>
-            <div class="activity-detail" id="act1">
-              <p>
-                <i class="fad fa-clock"></i> 10:30 & 16:00
-              </p>
-              <p>
-                Marvel at our free flight show featuring macaws, storks, cockatoos and other birds as they soar through the sky - an amazing opportunity to see so many different birds in one environment.
-              </p>
-            </div>
             <button class="btn-activity" data-id="act1">Read More</button>
           </div>
           <div class="activity-items" style="background: url(<?= "{$h->img_url}act02.jpg" ?>);background-size: cover;">
             <h1 class="activity-heading">Lory Feeding</h1>
-            <div class="activity-detail" id="act2">
-              <p>
-                <i class="fad fa-clock"></i> 10:30 & 16:00
-              </p>
-              <p>
-                Marvel at our free flight show featuring macaws, storks, cockatoos and other birds as they soar through the sky - an amazing opportunity to see so many different birds in one environment.
-              </p>
-            </div>
             <button class="btn-activity" data-id="act2">Read More</button>
           </div>
           <div class="activity-items" style="background: url(<?= "{$h->img_url}act03.jpg" ?>);background-size: cover;">
             <h1 class="activity-heading">4D Theater</h1>
-            <div class="activity-detail" id="act3">
-              <p>
-                <i class="fad fa-clock"></i> 10:30 & 16:00
-              </p>
-              <p>
-                Marvel at our free flight show featuring macaws, storks, cockatoos and other birds as they soar through the sky - an amazing opportunity to see so many different birds in one environment.
-              </p>
-            </div>
             <button class="btn-activity" data-id="act3">Read More</button>
           </div>
           <div class="activity-items" style="background: url(<?= "{$h->img_url}act04.jpg" ?>);background-size: cover;">
             <h1 class="activity-heading">Pelican Feeding</h1>
-            <div class="activity-detail" id="act4">
-              <p>
-                <i class="fad fa-clock"></i> 10:30 & 16:00
-              </p>
-              <p>
-                Marvel at our free flight show featuring macaws, storks, cockatoos and other birds as they soar through the sky - an amazing opportunity to see so many different birds in one environment.
-              </p>
-            </div>
             <button class="btn-activity" data-id="act4">Read More</button>
           </div>
         </div>
@@ -288,4 +266,5 @@
     </div>
     <div id="sign-up-void" class="void animate__animated animate__fadeOut"></div>
   </div>
+</div>
   <script src="<?= "{$h->base_url}assets/js/home.js" ?>"></script>

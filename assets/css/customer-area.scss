@@ -1,6 +1,18 @@
 .container {
   padding: 24px 100px;
 
+  @media screen and (max-width: 1200px){
+    &{
+      padding: 24px 50px;
+    }
+  }
+  
+  @media screen and (max-width: 768px){
+    &{
+      padding: 20px;
+    }
+  }
+
   .heading {
     display: flex;
     align-items: center;
@@ -192,6 +204,18 @@
         // font-weight: 600;
       }
     }
+    @media screen and (max-width: 1200px){
+      &{
+        display: flex;
+        flex-direction: column;
+        .left > div{
+          width: 320px;
+        }
+        .right{
+          padding-left: 0px;
+        }
+      }
+    }
   }
 }
 .booking-data{
@@ -200,6 +224,12 @@
   display: grid;
   grid-template-columns: repeat(2,calc(50% - 6px));
   grid-gap: 12px;
+  
+  @media screen and (max-width: 768px){
+    &{
+      grid-template-columns: repeat(1,100%);
+    }
+  }
   .data-items{
     width: 100%;
     background-color: #fff;

@@ -9,9 +9,15 @@
   outline: none;
 }
 
+.body{
+  max-width: 1400px !important;
+  margin: 0px auto;
+}
+
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  overflow-x: hidden;
   // font-family: "syncopate";
   // font-family: "barlow condensed";
   font-family: "outfit";

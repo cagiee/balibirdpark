@@ -2,7 +2,22 @@
   display: grid;
   grid-template-columns: 720px auto;
   min-height: 100vh;
-
+  @media screen and (max-width: 718px){
+    &{
+      grid-template-columns: 100%;
+    }
+    & > form > .left{
+      padding: 24px 50px !important;
+    }
+    & > div{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 718px){
+    & > form > .left{
+      padding: 20px !important;
+    }
+  }
   .left {
     padding: 24px 100px;
 
@@ -72,6 +87,17 @@
       display: grid;
       grid-template-columns: calc(27.5% - 12px) calc(27.5% - 12px) calc(45% - 12px);
       grid-gap: 18px;
+      @media screen and (max-width: 560px){
+        display: flex;
+        flex-wrap: wrap;
+        .input-group{
+          width: calc(50% - 9px);
+        }
+        .input-group:last-child{
+          width: 100%;
+          margin-top: 0px;
+        }
+      }
     }
 
     .payment-box {
