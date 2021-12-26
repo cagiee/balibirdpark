@@ -74,7 +74,7 @@ a{
         // background-color: #f7f7f7;
         border-radius: 99px;
         cursor: pointer;
-        .far{
+        .fad{
           width: 24px;
           margin-right: 6px;
           text-align: center;
@@ -111,8 +111,30 @@ a{
       padding: 0px 24px;
       position: relative;
     }
+    .data-filter{
+      display: flex;
+      height: 45px;
+      .data-filter-items{
+        margin-right: 6px;
+        a{
+          font-size: .75em;
+          padding: 5px 14px;
+          font-weight: 600;
+          border-radius: 99px;
+          color: #666;
+          background-color: #ddd;
+        }
+      }
+      *.selected{
+        a{
+          color: #fff;
+          background-color: #666;
+        }
+      }
+    }
     .data-table{
       width: 100%;
+      max-width: 100%;
       border-collapse: collapse;
       tr{
         background-color: #fff;
@@ -120,6 +142,7 @@ a{
         border-bottom: 5px solid #f7f7f7;
       }
       td{
+        white-space: nowrap;
         padding: 12px 21px;
         font-size: .9em;
         font-weight: 300;
@@ -138,7 +161,7 @@ a{
           }
         }
       }
-      .btn-ban{
+      .btn-ban,.btn-active{
         padding: 7px 14px;
         border: 0;
         border-radius: 4px;
@@ -148,6 +171,26 @@ a{
         color: #fff;
         cursor: pointer;
       }
+      .btn-change-password{
+        padding: 7px 14px;
+        border: 0;
+        border-radius: 4px;
+        font-family: "Outfit";
+        font-weight: 600;
+        background-color: #f09d21;
+        color: #fff;
+        cursor: pointer;
+      }
+      .btn-actived{
+        padding: 7px 14px;
+        border: 0;
+        border-radius: 4px;
+        font-family: "Outfit";
+        font-weight: 600;
+        background-color: #ccc;
+        color: #666;
+        cursor: pointer;
+      }
       .btn-unban{
         padding: 7px 14px;
         border: 0;
@@ -155,6 +198,16 @@ a{
         font-family: "Outfit";
         font-weight: 600;
         background-color: #008000;
+        color: #fff;
+        cursor: pointer;
+      }
+      .btn-detail-payment{
+        padding: 7px 14px;
+        border: 0;
+        border-radius: 4px;
+        font-family: "Outfit";
+        font-weight: 600;
+        background-color: #006eff;
         color: #fff;
         cursor: pointer;
       }
@@ -176,14 +229,25 @@ a{
         color: #666;
         text-transform: uppercase;
         font-size: .8em;
-        &.safe{
+        &.safe,&.paid,&.indonesian{
           background-color: #e7ffe7;
           color: #008000;
         }
-        &.banned{
+        &.banned,&.actived,&.balinese{
           background-color: #ffdddd;
           color: #e92f2f;
         }
+        &.vip{
+          background-color: #fffbbf;
+          color: #e9be2f;
+        }
+        &.overseas{
+          background-color: #e7f1ff;
+          color: #006eff;
+        }
+      }
+      .data-icon{
+        color: #008000;
       }
     }
     
@@ -204,7 +268,7 @@ a{
     }
     .dataTables_filter{
       position: absolute;
-      top: 0;
+      top: 45px;
       right: 20px;
       color: #666;
       font-size: .9em;
@@ -215,6 +279,7 @@ a{
         padding: 7px 12px;
       }
     }
+    
     .dataTables_info{
       font-size: .9em;
       color: #666;
@@ -229,6 +294,48 @@ a{
         margin-left: 12px;
         font-size: .9em;
         color: #666;
+      }
+    }
+  }
+}
+
+#customer-page{
+  .dataTables_filter{
+    top:0;
+  }
+}
+
+#dashboard-page{
+  .widget-1{
+    display: grid;
+    grid-template-columns: repeat(4,calc(25% - 18px));
+    grid-gap: 12px;
+    .widget-items{
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba($color: #000000, $alpha: .1);
+      border-radius: 12px;
+      padding: 21px;
+      height: 100px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      .widget-data{
+        font-weight: 600;
+        font-size: 1.7em;
+      }
+      .widget-title{
+        font-weight: 400;
+        font-size: .9em;
+        margin-top: 8px;
+        color: #999;
+      }
+      .widget-icon{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 24px;
+        font-size: 2em;
+        color: #008000;
       }
     }
   }

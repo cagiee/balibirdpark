@@ -1,4 +1,4 @@
-<div class="admin-body">
+<div class="admin-body" id="customer-page">
   <?php include "./components/sidenav.php"; ?>
   <div class="content">
     <div class="topnav">
@@ -7,7 +7,6 @@
       </div>
     </div>
     <div class="container">
-      <!-- <?= md5("nicolatesla") ?> -->
       <table class="data-table" id="table-customer">
         <thead>
           <tr>
@@ -33,14 +32,16 @@
                   <td><span class="data-status <?= $data['status'] ?>"><?= $data['status'] ?></span></td>
                   <td><?= $data['description'] == "" ? '-' :  "<button class='btn-desc' onclick='Swal.fire(`Description`,`{$data['description']}`)'>View</button>" ?></td>
                   <td>
+                    
+                  <button class="btn-change-password" data-id="<?= $data['user_id'] ?>" data-name="<?= $data['username'] ?>">Change Password</button>
                     <?php
                       if($data['status'] == "safe"){
                         ?>
-                          <button class="btn-ban">Ban</button>
+                          <button class="btn-ban" data-id="<?= $data['user_id'] ?>" data-name="<?= $data['username'] ?>">Ban</button>
                         <?php
                       }else{
                         ?>
-                          <button class="btn-unban">Unban</button>
+                          <button class="btn-unban" data-id="<?= $data['user_id'] ?>" data-name="<?= $data['username'] ?>">Unban</button>
                         <?php
                       }
                     ?>

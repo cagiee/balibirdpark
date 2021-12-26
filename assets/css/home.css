@@ -288,7 +288,7 @@ section > .container {
   margin-top: 14px;
 }
 
-#content #activity .activity-list .activity-items .btn-activity .fa {
+#content #activity .activity-list .activity-items .btn-activity .fad {
   margin-left: 6px;
   -webkit-transition: .4s;
   transition: .4s;
@@ -321,20 +321,61 @@ section > .container {
   border-right: 1px solid #ccc;
 }
 
-#content #price .box .price-list .fa {
+#content #price .box .price-list ul {
+  width: calc(100% - 75px);
+  padding-left: 16px;
+}
+
+#content #price .box .price-list ul li {
+  margin-bottom: 6px;
+  list-style: none;
+  color: #444;
+  position: relative;
+  font-size: .9em;
+}
+
+#content #price .box .price-list ul li::before {
+  content: "◆";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  font-size: .6em;
+  position: absolute;
+  left: -16px;
+  top: 4px;
+  color: #008000;
+  /* Change the color */
+  font-weight: bold;
+  /* If you want it to be bold */
+}
+
+#content #price .box .price-list .price-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 75px);
+}
+
+#content #price .box .price-list .fad {
   color: green;
   font-size: 2em;
 }
 
-#content #price .box .price-list h4 {
+#content #price .box .price-list h5 {
   color: #666;
+  font-size: .7em;
+}
+
+#content #price .box .price-list .price {
+  font-weight: 600;
+  font-size: 1em;
 }
 
 #content #price .box .price-list .name {
   font-size: 1.2em;
   font-weight: 600;
   margin-top: 12px;
-  margin-bottom: 12px;
   color: #2e4d2e;
 }
 
@@ -452,6 +493,7 @@ section > .container {
   background-color: #fff;
   padding: 27px;
   min-width: 360px;
+  max-width: 360px;
   z-index: 1;
 }
 
@@ -479,7 +521,7 @@ section > .container {
   font-weight: 600;
 }
 
-.modal .modal-box p.error .fa {
+.modal .modal-box p.error .fad {
   margin-right: 4px;
 }
 
@@ -555,7 +597,7 @@ section > .container {
   font-family: "Outfit";
 }
 
-.input-group-float .fa {
+.input-group-float .fad {
   position: absolute;
   top: 50%;
   left: 20px;

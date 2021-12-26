@@ -105,7 +105,7 @@ a {
   cursor: pointer;
 }
 
-.admin-body .sidenav .sidenav-content .sidenav-items .far {
+.admin-body .sidenav .sidenav-content .sidenav-items .fad {
   width: 24px;
   margin-right: 6px;
   text-align: center;
@@ -148,8 +148,34 @@ a {
   position: relative;
 }
 
+.admin-body .content .data-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 45px;
+}
+
+.admin-body .content .data-filter .data-filter-items {
+  margin-right: 6px;
+}
+
+.admin-body .content .data-filter .data-filter-items a {
+  font-size: .75em;
+  padding: 5px 14px;
+  font-weight: 600;
+  border-radius: 99px;
+  color: #666;
+  background-color: #ddd;
+}
+
+.admin-body .content .data-filter *.selected a {
+  color: #fff;
+  background-color: #666;
+}
+
 .admin-body .content .data-table {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
 }
 
@@ -160,6 +186,7 @@ a {
 }
 
 .admin-body .content .data-table td {
+  white-space: nowrap;
   padding: 12px 21px;
   font-size: .9em;
   font-weight: 300;
@@ -178,7 +205,7 @@ a {
   margin-left: 4px;
 }
 
-.admin-body .content .data-table .btn-ban {
+.admin-body .content .data-table .btn-ban, .admin-body .content .data-table .btn-active {
   padding: 7px 14px;
   border: 0;
   border-radius: 4px;
@@ -189,6 +216,28 @@ a {
   cursor: pointer;
 }
 
+.admin-body .content .data-table .btn-change-password {
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 4px;
+  font-family: "Outfit";
+  font-weight: 600;
+  background-color: #f09d21;
+  color: #fff;
+  cursor: pointer;
+}
+
+.admin-body .content .data-table .btn-actived {
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 4px;
+  font-family: "Outfit";
+  font-weight: 600;
+  background-color: #ccc;
+  color: #666;
+  cursor: pointer;
+}
+
 .admin-body .content .data-table .btn-unban {
   padding: 7px 14px;
   border: 0;
@@ -196,6 +245,17 @@ a {
   font-family: "Outfit";
   font-weight: 600;
   background-color: #008000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.admin-body .content .data-table .btn-detail-payment {
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 4px;
+  font-family: "Outfit";
+  font-weight: 600;
+  background-color: #006eff;
   color: #fff;
   cursor: pointer;
 }
@@ -221,14 +281,28 @@ a {
   font-size: .8em;
 }
 
-.admin-body .content .data-table .data-status.safe {
+.admin-body .content .data-table .data-status.safe, .admin-body .content .data-table .data-status.paid, .admin-body .content .data-table .data-status.indonesian {
   background-color: #e7ffe7;
   color: #008000;
 }
 
-.admin-body .content .data-table .data-status.banned {
+.admin-body .content .data-table .data-status.banned, .admin-body .content .data-table .data-status.actived, .admin-body .content .data-table .data-status.balinese {
   background-color: #ffdddd;
   color: #e92f2f;
+}
+
+.admin-body .content .data-table .data-status.vip {
+  background-color: #fffbbf;
+  color: #e9be2f;
+}
+
+.admin-body .content .data-table .data-status.overseas {
+  background-color: #e7f1ff;
+  color: #006eff;
+}
+
+.admin-body .content .data-table .data-icon {
+  color: #008000;
 }
 
 .admin-body .content .dataTables_length {
@@ -251,7 +325,7 @@ a {
 
 .admin-body .content .dataTables_filter {
   position: absolute;
-  top: 0;
+  top: 45px;
   right: 20px;
   color: #666;
   font-size: .9em;
@@ -283,5 +357,55 @@ a {
   margin-left: 12px;
   font-size: .9em;
   color: #666;
+}
+
+#customer-page .dataTables_filter {
+  top: 0;
+}
+
+#dashboard-page .widget-1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc(25% - 18px))[4];
+      grid-template-columns: repeat(4, calc(25% - 18px));
+  grid-gap: 12px;
+}
+
+#dashboard-page .widget-1 .widget-items {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 21px;
+  height: 100px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#dashboard-page .widget-1 .widget-items .widget-data {
+  font-weight: 600;
+  font-size: 1.7em;
+}
+
+#dashboard-page .widget-1 .widget-items .widget-title {
+  font-weight: 400;
+  font-size: .9em;
+  margin-top: 8px;
+  color: #999;
+}
+
+#dashboard-page .widget-1 .widget-items .widget-icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 24px;
+  font-size: 2em;
+  color: #008000;
 }
 /*# sourceMappingURL=admin.css.map */

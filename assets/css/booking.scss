@@ -232,6 +232,7 @@
     background-color: #fff;
     padding: 27px;
     min-width: 360px;
+    max-width: 360px;
     z-index: 1;
 
     #step-2{
@@ -242,10 +243,15 @@
       img{
         width: 90px;
       }
-      h4{
+      #payment-status{
         margin-top: 12px;
         font-size: 1.35em;
         font-weight: 600;
+      }
+      #payment-message{
+        margin: 12px auto;
+        color: #666;
+        text-align: center;
       }
     }
 
@@ -299,7 +305,7 @@
       display: grid;
       grid-template-columns: repeat(2,calc(50% - 6px));
       grid-gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
       .payment-items{
         display: flex;
         align-items: center;
@@ -328,6 +334,12 @@
           height: 18px;
         }
       }
+    }
+
+    #payment-error{
+      color: #ff6161;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
     .close-modal {

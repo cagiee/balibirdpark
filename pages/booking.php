@@ -102,22 +102,23 @@
       <p>Select your payment method</p>
       <div class="payment-method">
         <div class="payment-items">
-          <div class="radio checked"></div>
+          <div class="radio" data-value="paypal"></div>
           <img src="<?= $h->img_url ?>paypal.png" alt="">
         </div>
         <div class="payment-items">
-          <div class="radio"></div>
+          <div class="radio" data-value="bca"></div>
           <img src="<?= $h->img_url ?>bca.png" alt="">
         </div>
         <div class="payment-items">
-          <div class="radio"></div>
+          <div class="radio" data-value="bri"></div>
           <img src="<?= $h->img_url ?>bri.png" alt="">
         </div>
         <div class="payment-items">
-          <div class="radio"></div>
+          <div class="radio" data-value="bni"></div>
           <img src="<?= $h->img_url ?>bni.png" alt="">
         </div>
       </div>
+      <p id="payment-error" style="display: none;"></p>
       <button class="btn-modal io-green" id="btn-modal-back">
         <span>Back</span>
       </button>
@@ -127,8 +128,9 @@
       </button>
     </div>
     <div id="step-2" style="display: none;">
-      <img id="payment-icon" src="<?= $h->img_url ?>payment.gif" alt="">
+      <img id="payment-icon" src="<?= $h->img_url ?>loading.gif" alt="">
       <h4 id="payment-status">Payment in process</h4>
+      <h4 id="payment-message" style="display: none;"></h4>
     </div>
   </div>
   <div id="payment-void" class="void animate__animated animate__fadeOut"></div>

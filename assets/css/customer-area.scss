@@ -77,7 +77,7 @@
           }
         }
 
-        .fa {
+        .fad {
           position: absolute;
           top: 50%;
           left: 20px;
@@ -106,8 +106,8 @@
           color: #fff;
         }
 
-        #btn-cl {
-          background-color: rgb(218, 47, 47);
+        #btn-cl-2 {
+          background-color: #ff3333;
         }
 
         #btn-ch {
@@ -121,7 +121,7 @@
         position: relative;
         margin-top: 18px;
 
-        #set-1 {
+        #set-1,#set-2 {
           width: 100%;
           display: grid;
           grid-template-columns: repeat(2, calc(50% - 6px));
@@ -136,14 +136,19 @@
             font-weight: 600;
             background-color: #444;
             color: #fff;
+            cursor: pointer;
           }
 
           #btn-cp {
-            background-color: orange;
+            background-color: #006eff;
           }
 
-          #btn-so {
-            background-color: rgb(218, 47, 47);
+          #btn-sc {
+            background-color: #008000;
+          }
+
+          #btn-so,#btn-cl-1 {
+            background-color: #ff3333;
           }
         }
       }
@@ -161,6 +166,27 @@
 
     & > .right{
       padding-left: 24px;
+      .booking-filter{
+        a{
+          text-decoration: none;
+        }
+        margin-top: 18px;
+        position: relative;
+        display: flex;
+        .filter-items{
+          padding: 5px 14px;
+          border-radius: 99px;
+          font-size: .8em;
+          background-color: #f7f7f7;
+          font-weight: 600;
+          color: #999;
+          margin-right: 12px;
+          &.active{
+            background-color: #008000;
+            color: #fff;
+          }
+        }
+      }
       & > .title{
         font-size: 1.5em;
         // font-weight: 600;
@@ -211,6 +237,10 @@
             background-color: rgb(216, 250, 216);
             color: green;
           }
+          &.actived{
+            background-color: #ffdddd;
+            color: #e92f2f;
+          }
         }
       }
       .right{
@@ -243,7 +273,7 @@
         font-size: .8em;
         color: #444;
         margin-bottom: 8px;
-        .fa{
+        .fad{
           margin-right: 2px;
           color: rgb(83, 153, 83);
           width: 12px;

@@ -119,7 +119,7 @@
   font-family: "Outfit";
 }
 
-.container .box > .left .input-group-float .fa {
+.container .box > .left .input-group-float .fad {
   position: absolute;
   top: 50%;
   left: 20px;
@@ -151,8 +151,8 @@
   color: #fff;
 }
 
-.container .box > .left #change-password-button #btn-cl {
-  background-color: #da2f2f;
+.container .box > .left #change-password-button #btn-cl-2 {
+  background-color: #ff3333;
 }
 
 .container .box > .left #change-password-button #btn-ch {
@@ -166,7 +166,7 @@
   margin-top: 18px;
 }
 
-.container .box > .left #profile-button #set-1 {
+.container .box > .left #profile-button #set-1, .container .box > .left #profile-button #set-2 {
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -175,7 +175,7 @@
   grid-gap: 12px;
 }
 
-.container .box > .left #profile-button #set-1 button {
+.container .box > .left #profile-button #set-1 button, .container .box > .left #profile-button #set-2 button {
   width: 100%;
   height: 36px;
   border: 0;
@@ -184,14 +184,19 @@
   font-weight: 600;
   background-color: #444;
   color: #fff;
+  cursor: pointer;
 }
 
-.container .box > .left #profile-button #set-1 #btn-cp {
-  background-color: orange;
+.container .box > .left #profile-button #set-1 #btn-cp, .container .box > .left #profile-button #set-2 #btn-cp {
+  background-color: #006eff;
 }
 
-.container .box > .left #profile-button #set-1 #btn-so {
-  background-color: #da2f2f;
+.container .box > .left #profile-button #set-1 #btn-sc, .container .box > .left #profile-button #set-2 #btn-sc {
+  background-color: #008000;
+}
+
+.container .box > .left #profile-button #set-1 #btn-so, .container .box > .left #profile-button #set-1 #btn-cl-1, .container .box > .left #profile-button #set-2 #btn-so, .container .box > .left #profile-button #set-2 #btn-cl-1 {
+  background-color: #ff3333;
 }
 
 .container .box > .left #pp-box {
@@ -205,6 +210,33 @@
 
 .container .box > .right {
   padding-left: 24px;
+}
+
+.container .box > .right .booking-filter {
+  margin-top: 18px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .box > .right .booking-filter a {
+  text-decoration: none;
+}
+
+.container .box > .right .booking-filter .filter-items {
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-size: .8em;
+  background-color: #f7f7f7;
+  font-weight: 600;
+  color: #999;
+  margin-right: 12px;
+}
+
+.container .box > .right .booking-filter .filter-items.active {
+  background-color: #008000;
+  color: #fff;
 }
 
 .container .box > .right > .title {
@@ -271,6 +303,11 @@
   color: green;
 }
 
+.booking-data .data-items .data-head .left .data-status.actived {
+  background-color: #ffdddd;
+  color: #e92f2f;
+}
+
 .booking-data .data-items .data-head .right .data-price {
   margin-top: 12px;
   font-size: 1.5em;
@@ -297,7 +334,7 @@
   margin-bottom: 8px;
 }
 
-.booking-data .data-items .data-body .data-pax .fa, .booking-data .data-items .data-body .data-date .fa, .booking-data .data-items .data-body .data-loc .fa {
+.booking-data .data-items .data-body .data-pax .fad, .booking-data .data-items .data-body .data-date .fad, .booking-data .data-items .data-body .data-loc .fad {
   margin-right: 2px;
   color: #539953;
   width: 12px;

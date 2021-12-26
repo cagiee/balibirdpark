@@ -19,19 +19,19 @@
   <div class="sidenav-content">
     <a href="dashboard">
       <div class="sidenav-items <?= $page == 'dashboard' ? 'active' : '' ?>">
-        <i class="far fa-home"></i>
+        <i class="fad fa-home"></i>
         <h4>Dashboard</h4>
       </div>
     </a>
     <a href="customer">
       <div class="sidenav-items <?= $page == 'customer' ? 'active' : '' ?>">
-        <i class="far fa-users"></i>
+        <i class="fad fa-users"></i>
         <h4>Customer</h4>
       </div>
     </a>
     <a href="booking-list">
       <div class="sidenav-items <?= $page == 'booking-list' ? 'active' : '' ?>">
-        <i class="far fa-file-invoice"></i>
+        <i class="fad fa-file-invoice"></i>
         <h4>Booking List</h4>
       </div>
     </a>

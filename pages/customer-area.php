@@ -1,3 +1,4 @@
+<?php include "./components/loading.php"; ?>
 <div class="container">
   <div class="heading">
     <a href="<?= $h->base_url ?>"><img src="<?= "{$h->img_url}logo.png" ?>" alt=""></a>
@@ -6,47 +7,51 @@
   <div class="box">
     <div class="left">
       <div>
-        <img class="background" src="./assets/img/customer-area-bg.jpg" alt="">
-        <img class="profile" src="./assets/img/profile.png" alt="">
+        <img class="background" src="<?= $h->img_url ?>customer-area-bg.jpg" alt="">
+        <img class="profile" src="<?= $h->img_url ?>profile.png" alt="">
         <div id="pp-box">
           <div id="profile">
             <h4 class="left-title">Profile</h4>
             <div class="input-group-float">
-              <i class="fa fa-user"></i>
-              <input type="text" autocomplete="off" name="usr" value="<?= $h->user()['username'] ?>" placeholder="Username" readonly>
+              <i class="fad fa-user"></i>
+              <input type="text" autocomplete="off" value="<?= $h->user()['username'] ?>" placeholder="Username" readonly>
             </div>
             <div class="input-group-float">
-              <i class="fa fa-envelope"></i>
-              <input type="text" autocomplete="off" name="eml" value="<?= $h->user()['email'] ?>" placeholder="Email">
+              <i class="fad fa-envelope"></i>
+              <input type="text" id="profile-email" autocomplete="off" value="<?= $h->user()['email'] ?>" placeholder="Email">
             </div>
             <div class="input-group-float">
-              <i class="fa fa-phone"></i>
-              <input type="text" autocomplete="off" name="phn" value="<?= $h->user()['phone'] ?>" placeholder="Phone">
+              <i class="fad fa-phone"></i>
+              <input type="text" id="profile-phone" autocomplete="off" value="<?= $h->user()['phone'] ?>" placeholder="Phone">
             </div>
             <div id="profile-button">
               <div id="set-1">
                 <button id="btn-cp">Change Password</button>
                 <button id="btn-so">Sign Out</button>
               </div>
+              <div id="set-2" style="display: none;">
+                <button id="btn-sc">Save Change</button>
+                <button id="btn-cl-1">Cancel</button>
+              </div>
             </div>
           </div>
           <div id="change-password" style="display: none;">
             <h4 class="left-title">Change Password</h4>
             <div class="input-group-float">
-              <i class="fa fa-lock"></i>
-              <input type="password" autocomplete="off" name="psw_old" placeholder="Old Password">
+              <i class="fad fa-lock"></i>
+              <input type="password" autocomplete="off" id="psw_old" placeholder="Old Password">
             </div>
             <div class="input-group-float">
-              <i class="fa fa-lock"></i>
-              <input type="password" autocomplete="off" name="psw_new" placeholder="New Password">
+              <i class="fad fa-lock"></i>
+              <input type="password" autocomplete="off" id="psw_new" placeholder="New Password">
             </div>
             <div class="input-group-float">
-              <i class="fa fa-lock"></i>
-              <input type="password" autocomplete="off" name="psw_cfm" placeholder="Confirm Password">
+              <i class="fad fa-lock"></i>
+              <input type="password" autocomplete="off" id="psw_cfm" placeholder="Confirm Password">
             </div>
             <div id="change-password-button">
-              <button id="btn-cl">Cancel</button>
               <button id="btn-ch">Change</button>
+              <button id="btn-cl-2">Cancel</button>
             </div>
           </div>
         </div>
@@ -54,9 +59,20 @@
     </div>
     <div class="right">
       <h4 class="title">My Booking</h4>
+      <div class="booking-filter">
+        <a href="<?= $h->base_url ?>customer-area/"><div class="filter-items <?= !isset($url[1]) ? "active" : ""?>">All</div></a>
+        <a href="<?= $h->base_url ?>customer-area/paid"><div class="filter-items <?= $url[1] == "paid" ? "active" : ""?>">Paid</div></a>
+        <a href="<?= $h->base_url ?>customer-area/actived"><div class="filter-items <?= $url[1] == "actived" ? "active" : ""?>">Actived</div></a>
+      </div>
       <div class="booking-data">
         <?php
-          $q = $h->s("*","booking","customer_id='{$h->user()['user_id']}'");
+          if(!isset($url[1]))
+            $cond = "1='1'";
+          else if($url[1] == "paid")
+            $cond = "booking_status = 'paid'";
+          else if($url[1] == "actived")
+            $cond = "booking_status = 'actived'";
+          $q = $h->s("*","booking","customer_id='{$h->user()['user_id']}' AND $cond");
           while ($data = $h->f($q)) {
             if ($data['package'] == "balinese") {
               $icon = "feather-alt";
@@ -82,11 +98,11 @@
                 <div class="data-body">
                   <h4 class="data-id">ID. <?= $data['booking_id'] ?></h4>
                   <h4 class="data-pax">
-                    <?= $data['adult'] > 0 ? '<i class="fa fa-child"></i> Adult x '.$data['adult'] : ""  ?> 
+                    <?= $data['adult'] > 0 ? '<i class="fad fa-child"></i> Adult x '.$data['adult'] : ""  ?> 
                     <?= $data['adult'] > 0 && $data['child'] > 0 ? '&nbsp;+&nbsp;' : ''; ?>
-                    <?= $data['child'] > 0 ? '<i class="fa fa-baby"></i> Child x '.$data['child'] : ""  ?> 
-                  <h4 class="data-date"><i class="fa fa-calendar"></i> <?= $h->fdate($data['booking_date']) ?></h4>
-                  <h4 class="data-loc"><i class="fa fa-map-marker-alt"></i> Bali Bird Park</h4>
+                    <?= $data['child'] > 0 ? '<i class="fad fa-baby"></i> Child x '.$data['child'] : ""  ?> 
+                  <h4 class="data-date"><i class="fad fa-calendar"></i> <?= $h->fdate($data['booking_date']) ?></h4>
+                  <h4 class="data-loc"><i class="fad fa-map-marker-alt"></i> Bali Bird Park</h4>
                 </div>
               </div>
             <?php
@@ -99,4 +115,7 @@
     </div>
   </div>
 </div>
-<script src="./assets/js/customer-area.js"></script>
+<script>
+  const [email,phone] = ["<?= $h->user()["email"] ?>","<?= $h->user()["phone"] ?>"];
+</script>
+<script src="<?= $h->base_url ?>assets/js/customer-area.js"></script>

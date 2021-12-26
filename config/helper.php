@@ -12,12 +12,28 @@ class Helper{
     $this->base_url="http://{$_SERVER['HTTP_HOST']}/";
     $this->do_url="http://{$_SERVER['HTTP_HOST']}/config/?do=";
     $this->img_url="http://{$_SERVER['HTTP_HOST']}/assets/img/";
+    date_default_timezone_set("Asia/Singapore");
     if (!$this->con) {
       echo "<h2>Error Connecting Database!</h2>";
       die();
     }else{
       session_start();
     }
+  }
+
+  public function generateKey()
+  {
+    
+    $date = getdate();
+    $y = substr($date["year"],2);
+    $m = $date["mon"] < 10 ? "0".$date["mon"] : $date["mon"];
+    $d = $date["mday"] < 10 ? "0".$date["mday"] : $date["mday"];
+    $j = $date["hours"] < 10 ? "0".$date["hours"] : $date["hours"];
+    $i = $date["minutes"] < 10 ? "0".$date["minutes"] : $date["minutes"];
+    $s = $date["seconds"] < 10 ? "0".$date["seconds"] : $date["seconds"];
+    $r = substr(str_shuffle("ABCEFGHIJKLMNPRSTWXYZ"),0,4);
+    $key = $y.$m.$d.$j.$i.$s.$r;
+    return $key;
   }
 
   public function checkLog()

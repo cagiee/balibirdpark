@@ -1,4 +1,5 @@
 var [child, adult, child_price, adult_price, package] = [0, 1, 50000, 100000, "indonesian"];
+var payment_method = "";
 
 $(".package-items").click(function () {
   $(".package-items").removeClass("active");
@@ -196,6 +197,7 @@ $(".payment-items").click(function () {
   $(".radio").removeClass("checked");
   let el = $(this).find(".radio")[0];
   $(el).addClass("checked");
+  payment_method = $(el).attr("data-value");
 })
 
 function formatDate(value) {
@@ -255,29 +257,41 @@ $("#payment-void").click(function () {
 })
 
 $("#btn-payment").click(function () {
-  modal_payment_is_closable = false;
-  $("#step-1").slideUp();
-  $("#step-2").slideDown();
-  setTimeout(() => {
-    let date = $("#date").val();
-    let data = `package=${package}&child=${child}&adult=${adult}&date=${date}`;
-    xml.open(`post`, `${do_url}booking`, true);
-    xml.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-    xml.send(data);
-    xml.onreadystatechange = function () {
-      if (xml.readyState == 4 && xml.status == 200) {
-        let response = JSON.parse(xml.responseText);
-        if (response.status == "OK") {
-          $("#payment-icon").attr("img", `${base_url}/assets/img/success.gif`);
-          $("#payment-status").text("Payment successful");
-          setTimeout(() => {
-            location.href = "customer-area";
-          }, 2400);
-        } else {
-          $("#payment-status").text("Payment unsuccesful");
-          location.href = "";
+  if(payment_method != ""){
+    modal_payment_is_closable = false;
+    $("#step-1").slideUp();
+    $("#step-2").slideDown();
+    setTimeout(() => {
+      let date = $("#date").val();
+      let data = `package=${package}&child=${child}&adult=${adult}&date=${date}&payment_method=${payment_method}`;
+      xml.open(`post`, `${do_url}booking`, true);
+      xml.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+      xml.send(data);
+      xml.onreadystatechange = function () {
+        if (xml.readyState == 4 && xml.status == 200) {
+          console.log(xml.responseText);
+          let response = JSON.parse(xml.responseText);
+          if (response.status == "OK") {
+            $("#payment-icon").attr("img", `${base_url}/assets/img/success.gif`);
+            $("#payment-status").text("Payment successful");
+            $("#payment-message").slideDown(250);
+            $("#payment-message").text(response.message);
+            setTimeout(() => {
+              location.href = "customer-area";
+            }, 2400);
+          } else {
+            $("#payment-status").text("Payment unsuccesful");
+            $("#payment-message").slideDown(250);
+            $("#payment-message").text(response.message);
+            setTimeout(() => {
+              location.href = "";
+            }, 2400);
+          }
         }
       }
-    }
-  }, 1000);
+    }, 1000);
+  }else{
+    $("#payment-error").html(`<i class="fa fa-exclamation-circle"></i> Please select your payment method`);
+    $("#payment-error").fadeIn();
+  }
 })
