@@ -23,13 +23,28 @@ $(function () {
   })
   $(".btn-activity").click(function () {
     let id = $(this).attr('data-id');
-    let deg = "0";
-    $(".activity-detail").slideUp();
-    if ($(`#${id}`).css("display") == "none") {
-      deg = "90";
-      $(`#${id}`).slideDown();
-      $(this).find(".fa").css("transform", `rotate(${deg}deg)`);
+    let text = "";
+    switch (id) {
+      case 'act1':
+        text = `Marvel at our free flight show featuring macaws, storks, cockatoos and other birds as they soar through the sky - an amazing opportunity to see so many different birds in one environment.`;
+        break;
+      case 'act2':
+        text = `Enter the misty jungle enclosure and feed the stunning rainbow-coloured lories with nectar as they land on you.`;
+        break;
+      case 'act3':
+        text = `Be entertained by 4-Dimension bird movies at the park’s air-conditioned cinema.`;
+        break;
+      case 'act4':
+        text = `Come throw some fish for the pelicans that have the longest bill of any bird in the world. See how their massive pouches flap with anticipation at feeding time.`;
+        break;
+    
+      default:
+        break;
     }
+    Swal.fire({
+      icon: "info",
+      text: text
+    })
   })
   $("#nav-activity").click(function () {
     $(window).scrollTop($("#activity").offset().top - 120);
