@@ -236,3 +236,29 @@ $(function () {
     $(el).attr("src",`${url}/assets/img/banner-bird-text.png`);
   }
 })
+$("#open-r-nav").click(function () {
+  $("#topnav-popup").show();
+})
+$("#close-r-nav").click(function () {
+  $("#topnav-popup").hide();
+})
+$("#r-nav-activity").click(function () {
+  $("#nav-activity").click();
+  $("#close-r-nav").click();
+})
+$("#r-nav-price").click(function () {
+  $("#nav-price").click();
+  $("#close-r-nav").click();
+})
+$("#r-nav-maps").click(function () {
+  $("#nav-maps").click();
+  $("#close-r-nav").click();
+})
+$("#r-nav-sign-in").click(function () {
+  $("#sign-in").click();
+  $("#close-r-nav").click();
+})
+$("#r-nav-sign-up").click(function () {
+  $("#sign-up").click();
+  $("#close-r-nav").click();
+})

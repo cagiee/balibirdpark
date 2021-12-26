@@ -109,7 +109,7 @@
           }
         ?>
         <div class="data-items-empty">
-          <a href="booking"><button>Booking Now</button></a>
+          <a href="<?= $h->base_url ?>booking"><button>Booking Now</button></a>
         </div>
       </div>
     </div>

@@ -37,7 +37,7 @@
         ?>
         
         <div class="topnav-items responsive">
-          <a><i class="fa fa-bars"></i></a>
+          <a id="open-r-nav"><i class="fa fa-bars"></i></a>
         </div>
       </div>
     </div>
@@ -265,6 +265,41 @@
       </form>
     </div>
     <div id="sign-up-void" class="void animate__animated animate__fadeOut"></div>
+  </div>
+</div>
+<div id="topnav-popup" style="display: none;">
+  <div class="box">
+    <i class="fad fa-times" id="close-r-nav"></i>
+    <div class="topnav-list" id="r-nav-activity">
+      <h4>Activity</h4>
+    </div>
+    <div class="topnav-list" id="r-nav-price">
+      <h4>Price</h4>
+    </div>
+    <div class="topnav-list" id="r-nav-maps">
+      <h4>Maps</h4>
+    </div>
+    <?php
+      if(!$h->checkLog()){
+        ?>
+          <div class="topnav-list" id="r-nav-sign-in">
+            <h4>Sign In</h4>
+          </div>
+          <div class="topnav-list sign-up" id="r-nav-sign-up">
+            <h4>Sign Up</h4>
+          </div>
+        <?php
+      }else{
+        ?>
+          <div class="topnav-list sign-up">
+            <a href="customer-area" class="nav-user">
+              <?= $h->user()['username'] ?>
+              <img width="24px" style="margin-left: 8px;" src="<?= $h->img_url."profile.png" ?>"/>
+            </a>
+          </div>
+        <?php
+      }
+    ?>
   </div>
 </div>
   <script src="<?= "{$h->base_url}assets/js/home.js" ?>"></script>
